@@ -77,9 +77,15 @@ function handleSubmitButton(){
     }
 
 }
-
-// Initialize the task when the page loads
-selectFiveUniqueTweetIndexes(emotionDataset, tweetsToBeClassified);
-displayTweet(emotionDataset, selectedTweetIndex)
-//Listen for submit button
-submitButton.addEventListener('click', handleSubmitButton);
+//Ask for consent to record user responses
+const userConsent = confirm("Your responses will be recorded for data labeling purposes. If you do not consent, please click 'Cancel' and close this window.");
+if (!userConsent) {
+    container.style.display = 'none';
+    document.body.innerHTML = '<h2 style="text-align: center; margin-top: 50px; color: #2c3e50;"> You have opted out. You may close this window </h2>';
+} else {
+    // Initialize the task when the page loads
+    selectFiveUniqueTweetIndexes(emotionDataset, tweetsToBeClassified);
+    displayTweet(emotionDataset, selectedTweetIndex);
+    //Listen for submit button
+    submitButton.addEventListener('click', handleSubmitButton);
+}
