@@ -10,6 +10,7 @@ const currentTweet = document.querySelector('.tweet');
 const submitButton = document.querySelector('button[type="button"]');
 const form = document.querySelector('form');
 const container = document.querySelector('.container');
+const progressLabel = document.getElementById('progressLabel');
 
 //Select the indexes in the dataset for the unique tweets that must be classified
 function selectFiveUniqueTweetIndexes(emotionDataset, tweetsToBeClassified){
@@ -25,9 +26,9 @@ function displayTweet(emotionDataset){
     let currentIndex = selectedTweetIndex[tweetsClassified];
     let currentTweetText = emotionDataset[currentIndex];
     currentTweet.textContent = `"${currentTweetText}"`;
+    progressLabel.textContent = `Tweet ${tweetsClassified+1} of ${tweetsToBeClassified}`;
     form.reset();
 }
-
 function storeClassification(){
     fetch('https://hai-interatction-hw1-backend.onrender.com/api/saveClassifiedTweets', {
         method: 'POST',
