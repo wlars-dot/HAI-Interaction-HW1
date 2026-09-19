@@ -3,7 +3,7 @@ let tweetsClassified = 0;
 let selectedTweetIndex = [];
 let classification = [];
 // Check proper way to actually create a user ID, maybe ask only for a name and associate a number in db
-const participantID = Math.floor(Math.random() * 10000);
+const participantID = "participant_"+Date.now()+"_"+Math.floor(Math.random() * 1000);
 
 //HTML elements
 const currentTweet = document.querySelector('.tweet');
@@ -69,7 +69,9 @@ function handleSubmitButton(){
         displayTweet(emotionDataset);
     } else {
         submitButton.disabled = true;
-        alert("Task complete! Here is the collected data:\n\n" + JSON.stringify(classification, null, 2));
+        //alert("Task complete! Here is the collected data:\n\n" + JSON.stringify(classification, null, 2));
+        currentTweet.textContent = "Thank you for completing the task!";
+        form.style.display = 'none';
         storeClassification();
     }
 
