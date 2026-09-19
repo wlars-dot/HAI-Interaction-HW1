@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Data Labeling Task (Homework 1) - Lars Wacher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <h1> Emotion Labeling </h1>
+    <p class="instruction"> Please read the following tweet and select the button that best describes the emotion associated with it, then click submit. </p>
+   
+    <div class ="tweet">
+        "Placeholder tweet to be used as an example"
+    </div>
+
+    <form>
+        <div class="emotion_options">
+            <label class="emotion_button">
+                <input type="radio" name="emotion" value="anger">
+                <span> Anger </span>
+            </label>
+            <label class="emotion_button">
+                <input type="radio" name="emotion" value="fear">
+                <span> Fear </span>
+            </label>
+            <label class="emotion_button">
+                <input type="radio" name="emotion" value="joy">
+                <span> Joy </span>
+            </label>
+            <label class="emotion_button">
+                <input type="radio" name="emotion" value="love">
+                <span> Love </span>
+            </label>
+            <label class="emotion_button">
+                <input type="radio" name="emotion" value="sadness"> 
+                <span> Sadness </span>
+            </label>
+            <label class="emotion_button">
+                <input type="radio" name="emotion" value="surprise">
+                <span> Surprise </span>
+            </label>
+        </div>
+
+        <button type="button"> Submit </button>
+    </form>
+    </div>
+    <script src="tweetsCollection.js"></script>
+    <script src="interactive.js"></script>
+</body>
+</html>
